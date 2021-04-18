@@ -6,11 +6,11 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <button>Add</button>
+        <button> Add</button> 
         <div>
-          <span>Name</span> <br />
-          <span>Phone</span>
-        </div> 
+        <span>Name</span> <br />
+        <span>Phone</span> 
+        </div>
       </div>
     );
   }
