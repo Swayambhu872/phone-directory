@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Header from "./Header"
 import './App.css'
 class App extends Component {
+  
   render() {
     let subscribers = [
       {
@@ -16,9 +17,11 @@ class App extends Component {
         phone: '999999999'
       }
     ];
+
     return (
+
       <div>
-        <Header />
+        <Header  heading = "Phone Directory"/>
         <div className="component-body-container">
           <button className="custom-btn add-btn">Add</button>
 
