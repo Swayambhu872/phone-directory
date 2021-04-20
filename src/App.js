@@ -4,6 +4,9 @@ import Header from "./Header"
 import './App.css'
 class App extends Component {
   
+  deleteHandler(message) {
+    alert(message);
+  }
   render() {
     let subscribers = [
       {
@@ -35,7 +38,7 @@ class App extends Component {
                <span className ="grid-item">{sub.name}</span>
                <span className ="grid-item">{sub.phone}</span>
                <span className="grid-item action-btn-container">
-                  <button className="custom-btn delete-btn">Delete</button>
+                  <button className="custom-btn delete-btn" onClick = {this.deleteHandler.bind(this,"Delete Handler clicked")}>Delete</button>
                 </span>
              </div>
            })
