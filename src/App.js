@@ -1,29 +1,40 @@
 
 import React, { Component } from 'react';
-import Header from "./Header"
-import './App.css'
+import Header from "./Header";
+import './App.css';
+import './common/common.css';
+
+ // let subscribers = [
+    //   {
+    //     id : 1,
+    //     name : 'Shilpa Bhat',
+    //     phone : '888888888'
+    //   },
+    //   {
+    //     id : 2,
+    //     name : 'Srishti',
+    //     phone: '999999999'
+    //   }
+    // ];
+
 class App extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      subscribersListToShow: []
+    }
+  }
   
   deleteHandler(message) {
     alert(message);
   }
   render() {
-    let subscribers = [
-      {
-        id : 1,
-        name : 'Shilpa Bhat',
-        phone : '888888888'
-      },
-      {
-        id : 2,
-        name : 'Srishti',
-        phone: '999999999'
-      }
-    ];
-
+   
     return (
 
-      <div>
+      <div className="component-container">
         <Header  heading = "Phone Directory"/>
         <div className="component-body-container">
           <button className="custom-btn add-btn">Add</button>
@@ -33,7 +44,7 @@ class App extends Component {
             <span className="grid-item phone-heading">Phone</span>
           </div>
          {
-           subscribers.map(sub => {
+           this.state.subscribersListToShow.map(sub => {
              return <div  key ={sub.id}className ="grid-container">
                <span className ="grid-item">{sub.name}</span>
                <span className ="grid-item">{sub.phone}</span>
