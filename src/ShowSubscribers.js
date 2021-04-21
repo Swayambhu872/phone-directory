@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import Header from "./Header";
-import './App.css';
+import './ShowSubscribers.css';
 import './common/common.css';
 
  // let subscribers = [
@@ -17,21 +17,36 @@ import './common/common.css';
     //   }
     // ];
 
-class App extends Component {
+class ShowSubscribers extends Component {
 
-  constructor() {
-    super();
+  // constructor() {
+  //   super();
 
-    this.state = {
-      subscribersListToShow: []
-    }
-  }
+  //   this.state = {
+  //     subscribersListToShow: []
+  //   }
+  //  // console.log("constructor called");
+  // }
   
   deleteHandler(message) {
     alert(message);
   }
+
+  // componentDidMount() {
+  //     let newSubscriber = {
+  //       id: 0,
+  //       name: "Shilpa Bhat",
+  //       phone: "8888888888"
+  //     }
+  //       let subscribersList = this.state.subscribersListToShow;
+  //       subscribersList.push(newSubscriber);
+  //       this.setState({subscribersListToShow:subscribersList});
+  //       console.log("state",this.state);
+
+
+  // }
   render() {
-   
+  // console.log("render called");
     return (
 
       <div className="component-container">
@@ -44,7 +59,7 @@ class App extends Component {
             <span className="grid-item phone-heading">Phone</span>
           </div>
          {
-           this.state.subscribersListToShow.map(sub => {
+           this.props.subscribersList.map(sub => {
              return <div  key ={sub.id}className ="grid-container">
                <span className ="grid-item">{sub.name}</span>
                <span className ="grid-item">{sub.phone}</span>
@@ -62,4 +77,4 @@ class App extends Component {
     );
   }
 }
-export default App;
+export default ShowSubscribers;
